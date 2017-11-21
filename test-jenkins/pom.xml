@@ -15,7 +15,6 @@
 		<connection>scm:git:git@github.com:KillTB/test-jenkins.git</connection>
 	</scm>
   
-  
   <build>
     <plugins>
       <plugin>
