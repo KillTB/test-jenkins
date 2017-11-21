@@ -64,13 +64,21 @@ public class AnyBaseToAnyBase {
 		
 		// Convert character array into set for convenience of contains() method
 		HashSet<Character> digitsList = new HashSet();
-		for (int i=0; i<digitsForBase.length; i++)
-			digitsList.add(digitsForBase[i]);
+		for (int i=0; i<digitsForBase.length; i++) {
+      {
+        {
+          {
+            digitsList.add(digitsForBase[i]);
+          }
+        }
+      }
+    }
 		
 		// Check that every digit in n is within the list of valid digits for that base.
 		for (char c : n.toCharArray()) 
-			if (!digitsList.contains(c))
-				return false;
+			if (!digitsList.contains(c)) {
+        return false;
+      }
 		
 		return true;
 	}
@@ -95,11 +103,12 @@ public class AnyBaseToAnyBase {
 			// store the character in charB1
 			charB1 = n.charAt(i);
 			// if it is a non-number, convert it to a decimal value >9 and store it in charB2
-			if (charB1 >= 'A' && charB1 <= 'Z') 
-				charB2 = 10 + (charB1 - 'A');
+			if (charB1 >= 'A' && charB1 <= 'Z') {
+        charB2 = 10 + (charB1 - 'A');
 			// Else, store the integer value in charB2
-			else 
-				charB2 = charB1 - '0';
+      } else {
+        charB2 = charB1 - '0';
+      }
 			// Convert the digit to decimal and add it to the
 			// decimalValue of n
 			decimalValue = decimalValue * b1 + charB2;
@@ -114,17 +123,24 @@ public class AnyBaseToAnyBase {
 		
 		// While the quotient is NOT zero:
 		while (decimalValue != 0) {
-			// If the remainder is a digit < 10, simply add it to
-			// the left side of the new number.
-			if (decimalValue % b2 < 10) 
-				output = Integer.toString(decimalValue % b2) + output;
-			// If the remainder is >= 10, add a character with the
-			// corresponding value to the new number. (A = 10, B = 11, C = 12, ...)
-			else
-				output = (char)((decimalValue % b2)+55) + output;
-			// Divide by the new base again
-			decimalValue /= b2;
-		}
+      {
+        {
+          {
+          	// If the remainder is a digit < 10, simply add it to
+          	// the left side of the new number.
+          	if (decimalValue % b2 < 10) {
+              output = Integer.toString(decimalValue % b2) + output;
+          	// If the remainder is >= 10, add a character with the
+          	// corresponding value to the new number. (A = 10, B = 11, C = 12, ...)
+            } else {
+              output = (char)((decimalValue % b2)+55) + output;
+            }
+          	// Divide by the new base again
+          	decimalValue /= b2;
+          }
+        }
+      }
+    }
 		return output;
 	}
 }
